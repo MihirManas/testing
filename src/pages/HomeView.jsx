@@ -26,7 +26,7 @@ const HomeView = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setHeroIndex((prev) => (prev + 1) % heroContent.length);
-    }, 4000);
+    }, 600000);
     return () => clearInterval(interval);
   }, []);
 
@@ -42,11 +42,11 @@ const HomeView = () => {
                   <span className="text-xs font-bold text-gray-700 dark:text-white/80 uppercase tracking-[0.25em]">Admissions Open 2026</span>
                 </div>
 
-                <div className="h-[240px] sm:h-[180px] md:h-[220px] lg:h-[260px] flex items-center relative mb-4">
+                <div className="grid items-center mb-8">
                   {heroContent.map((item, idx) => (
                     <h1 
                       key={idx}
-                      className={`absolute top-0 left-0 w-full text-5xl md:text-6xl lg:text-7xl font-medium text-gray-900 dark:text-white tracking-tighter leading-[1.05] transition-all duration-700 ease-in-out ${idx === heroIndex ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}
+                      className={`col-start-1 row-start-1 w-full text-5xl md:text-6xl lg:text-7xl font-medium text-gray-900 dark:text-white tracking-tighter leading-[1.05] transition-all duration-700 ease-in-out ${idx === heroIndex ? 'opacity-100 translate-y-0 z-10' : 'opacity-0 translate-y-4 pointer-events-none z-0'}`}
                     >
                       {item.text}
                     </h1>

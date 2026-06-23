@@ -42,11 +42,11 @@ const HomeView = () => {
                   <span className="text-xs font-bold text-gray-700 dark:text-white/80 uppercase tracking-[0.25em]">Admissions Open 2026</span>
                 </div>
 
-                <div className="grid relative mb-8">
+                <div className="relative mb-8 transition-all duration-1000 ease-in-out">
                   {heroContent.map((item, idx) => (
                     <h1 
                       key={idx}
-                      className={`col-start-1 row-start-1 w-full text-5xl md:text-6xl lg:text-7xl font-medium text-gray-900 dark:text-white tracking-tighter leading-[1.05] transition-all duration-1000 ease-in-out ${idx === heroIndex ? 'opacity-100 translate-y-0 z-10' : 'opacity-0 translate-y-4 pointer-events-none z-0'}`}
+                      className={`w-full text-5xl md:text-6xl lg:text-7xl font-medium text-gray-900 dark:text-white tracking-tighter leading-[1.05] transition-all duration-1000 ease-in-out ${idx === heroIndex ? 'relative opacity-100 translate-y-0 z-10' : 'absolute top-0 left-0 opacity-0 translate-y-4 pointer-events-none z-0'}`}
                     >
                       {item.text}
                     </h1>
